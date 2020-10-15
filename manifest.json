@@ -1,0 +1,23 @@
+//configuration, properties and info about chrome extension 
+{
+    "name": "URL Classifier",
+    "version": "1.0",
+    "description": "Classifies the visited web page",
+      "permissions": ["webNavigation","tabs"],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+  }
